@@ -1,4 +1,4 @@
-"""socialmedia URL Configuration
+"""employeeproject URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api import views
+from employee import views
 from rest_framework.routers import DefaultRouter
 router=DefaultRouter()
-router.register("posts",views.PostsView,basename="posts")
+router.register("emp",views.EmployeeView,basename="emp")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]+router.urls
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
